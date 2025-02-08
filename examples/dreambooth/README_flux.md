@@ -19,6 +19,7 @@ The `train_dreambooth_flux.py` script shows how to implement the training proced
 > As the model is gated, before using it with diffusers you first need to go to the [FLUX.1 [dev] Hugging Face page](https://huggingface.co/black-forest-labs/FLUX.1-dev), fill in the form and accept the gate. Once you are in, you need to log in so that your system knows you’ve accepted the gate. Use the command below to log in:
 
 ```bash
+git config --global credential.helper store
 huggingface-cli login
 ```
 
@@ -72,6 +73,12 @@ Note also that we use PEFT library as backend for LoRA training, make sure to ha
 
 Now let's get our dataset. For this example we will use some dog images: https://huggingface.co/datasets/diffusers/dog-example.
 
+```base
+git clone https://huggingface.co/datasets/diffusers/dog-example dog
+cd dog
+rm -rf .git*
+```
+
 Let's first download it locally:
 
 ```python
@@ -106,14 +113,12 @@ accelerate launch train_dreambooth_flux.py \
   --gradient_accumulation_steps=4 \
   --optimizer="prodigy" \
   --learning_rate=1. \
-  --report_to="wandb" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
   --max_train_steps=500 \
   --validation_prompt="A photo of sks dog in a bucket" \
   --validation_epochs=25 \
-  --seed="0" \
-  --push_to_hub
+  --seed="0"
 ```
 
 To better track our training experiments, we're using the following flags in the command above:
