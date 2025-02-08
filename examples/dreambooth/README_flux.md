@@ -45,6 +45,7 @@ pip install -e .
 
 Then cd in the `examples/dreambooth` folder and run
 ```bash
+cd examples/dreambooth
 pip install -r requirements_flux.txt
 ```
 
