@@ -19,6 +19,7 @@ The `train_dreambooth_flux.py` script shows how to implement the training proced
 > As the model is gated, before using it with diffusers you first need to go to the [FLUX.1 [dev] Hugging Face page](https://huggingface.co/black-forest-labs/FLUX.1-dev), fill in the form and accept the gate. Once you are in, you need to log in so that your system knows you’ve accepted the gate. Use the command below to log in:
 
 ```bash
+pip install -U "huggingface_hub[cli]"
 git config --global credential.helper store
 huggingface-cli login
 ```
@@ -36,6 +37,7 @@ Before running the scripts, make sure to install the library's training dependen
 To make sure you can successfully run the latest versions of the example scripts, we highly recommend **installing from source** and keeping the install up to date as we update the example scripts frequently and install some example-specific requirements. To do this, execute the following steps in a new virtual environment:
 
 ```bash
+pip install accelerate
 git clone https://github.com/huggingface/diffusers
 cd diffusers
 pip install -e .
