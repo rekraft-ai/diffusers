@@ -80,6 +80,7 @@ Now let's get our dataset. For this example we will use some dog images: https:/
 git clone https://huggingface.co/datasets/diffusers/dog-example dog
 cd dog
 rm -rf .git*
+cd ..
 ```
 
 Let's first download it locally:
