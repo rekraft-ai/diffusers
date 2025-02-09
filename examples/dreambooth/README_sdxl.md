@@ -92,8 +92,7 @@ accelerate launch train_dreambooth_lora_sdxl.py \
   --max_train_steps=500 \
   --validation_prompt="A photo of sks dog in a bucket" \
   --validation_epochs=25 \
-  --seed="0" \
-  --push_to_hub
+  --seed="0"
 ```
 
 To better track our training experiments, we're using the following flags in the command above:
