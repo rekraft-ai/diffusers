@@ -169,7 +169,6 @@ accelerate launch train_dreambooth_lora_flux.py \
   --gradient_accumulation_steps=4 \
   --optimizer="prodigy" \
   --learning_rate=1. \
-  --report_to="wandb" \
   --lr_scheduler="constant" \
   --lr_warmup_steps=0 \
   --max_train_steps=500 \
