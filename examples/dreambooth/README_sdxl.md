@@ -81,7 +81,7 @@ accelerate launch train_dreambooth_lora_sdxl.py \
   --instance_data_dir=$INSTANCE_DIR \
   --pretrained_vae_model_name_or_path=$VAE_PATH \
   --output_dir=$OUTPUT_DIR \
-  --mixed_precision="fp16" \
+  --mixed_precision="no" \
   --instance_prompt="a photo of sks dog" \
   --resolution=1024 \
   --train_batch_size=1 \
